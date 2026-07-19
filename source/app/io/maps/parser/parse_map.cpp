@@ -34,7 +34,7 @@ namespace tactile::io {
 
 auto parse_map(const fs::path& path) -> ParseData
 {
-  spdlog::info("Parsing map {}", path);
+  spdlog::info("Parsing map {}", path.string());
   ParseData result;
 
   try {
@@ -56,7 +56,7 @@ auto parse_map(const fs::path& path) -> ParseData
       result = parse_json_map(path);
     }
     else {
-      spdlog::error("Unsupported save file extension: {}", ext);
+      spdlog::error("Unsupported save file extension: {}", ext.string());
       result.set_error(ParseError::UnsupportedMapExtension);
       return result;
     }

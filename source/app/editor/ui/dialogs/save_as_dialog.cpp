@@ -37,7 +37,7 @@ void show_save_as_dialog(entt::dispatcher& dispatcher)
   if (dialog.is_okay()) {
     auto path = dialog.path();
 
-    const auto ext = path.extension();
+    const auto ext = path.extension().string();
     const auto hasValidExtension = ext == ".yaml" || ext == ".yml" || ext == ".json" ||
                                    ext == ".tmj" || ext == ".tmx" || ext == ".xml";
 

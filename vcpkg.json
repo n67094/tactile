@@ -6,7 +6,7 @@
   "maintainers": [
     "albin-johansson"
   ],
-  "builtin-baseline": "927006b24c3a28dfd8aa0ec5f8ce43098480a7f1",
+  "builtin-baseline": "0878b5224d4a4968940ee296a2e7fae2d3b62983",
   "dependencies": [
     "boost-assert",
     "boost-container",
@@ -36,5 +36,11 @@
     "stb",
     "tinyfiledialogs",
     "yaml-cpp"
+  ],
+  "overrides": [
+    {
+      "name": "imgui",
+      "version": "1.88"
+    }
   ]
 }

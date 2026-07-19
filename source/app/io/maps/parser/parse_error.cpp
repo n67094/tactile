@@ -19,7 +19,7 @@
 
 #include "parse_error.hpp"
 
-#include <magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 #include "misc/panic.hpp"
 

@@ -29,7 +29,7 @@ target_link_libraries(${TACTILE_LIB}
                       PUBLIC
                       ${TACTILE_PROTO}
                       SDL2::SDL2-static
-                      SDL2::SDL2_image
+                      SDL2_image::SDL2_image-static
                       imgui::imgui
                       EnTT::EnTT
                       magic_enum::magic_enum

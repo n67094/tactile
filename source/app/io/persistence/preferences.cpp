@@ -23,7 +23,7 @@
 #include <ios>      // ios
 #include <utility>  // move
 
-#include <magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 #include <spdlog/spdlog.h>
 
 #include "core/common/filesystem.hpp"

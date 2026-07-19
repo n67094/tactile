@@ -40,7 +40,7 @@ void save_document(const MapDocument& document)
   TACTILE_ASSERT(document.has_path());
 
   const auto path = fs::absolute(document.get_path());
-  spdlog::info("Trying to save map to {}", path);
+  spdlog::info("Trying to save map to {}", path.string());
 
   EmitInfo info {path, convert_map_to_ir(document)};
 
@@ -55,7 +55,7 @@ void save_document(const MapDocument& document)
     emit_xml_map(info);
   }
   else {
-    spdlog::error("Unsupported file extension {}", ext);
+    spdlog::error("Unsupported file extension {}", ext.string());
   }
 
   TACTILE_DEBUG_PROFILE_END("Emitted document")

@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 if (DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
   set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 endif ()
@@ -52,7 +54,7 @@ find_package(nlohmann_json CONFIG REQUIRED)
 find_package(Protobuf CONFIG REQUIRED)
 find_package(pugixml CONFIG REQUIRED)
 find_package(SDL2 CONFIG REQUIRED)
-find_package(SDL2-image CONFIG REQUIRED)
+find_package(SDL2_image CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(tinyfiledialogs CONFIG REQUIRED)
 find_package(yaml-cpp CONFIG REQUIRED)

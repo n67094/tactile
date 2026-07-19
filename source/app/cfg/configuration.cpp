@@ -78,8 +78,8 @@ void _init_sdl_attributes()
 inline void terminate_handler()
 {
   try {
-    spdlog::critical("Into exile I must go. Failed I have.\n{}",
-                     boost::stacktrace::stacktrace {});
+    auto trace = boost::stacktrace::to_string(boost::stacktrace::stacktrace());
+    spdlog::critical("Into exile I must go. Failed I have.\n{}", trace);
   }
   catch (...) {
     /* Not much we can do */
@@ -119,8 +119,10 @@ AppConfiguration::AppConfiguration()
     throw TactileError {"Failed to initialize GLEW!"};
   }
 
-  spdlog::debug("OpenGL version... {}", glGetString(GL_VERSION));
-  spdlog::debug("OpenGL renderer... {}", glGetString(GL_RENDERER));
+  spdlog::debug("OpenGL version... {}",
+                reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+  spdlog::debug("OpenGL renderer... {}",
+                reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
 
   io::load_preferences();
 

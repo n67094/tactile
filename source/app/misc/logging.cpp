@@ -51,9 +51,11 @@ class HistorySink final : public spdlog::sinks::base_sink<spdlog::details::null_
  public:
   void sink_it_(const spdlog::details::log_msg& msg) override
   {
+    /*
     const auto time = fmt::localtime(msg.time);
     auto       processed = fmt::format("{:%H:%M:%S} > {}", time, msg.payload);
     mHistory.push_back({msg.level, std::move(processed)});
+    */
   }
 
   void flush_() override
@@ -120,8 +122,10 @@ void init_logger()
 
   spdlog::info("Tactile version " TACTILE_VERSION_STRING);
 
+  /*
   const auto time = fmt::localtime(std::time(nullptr));
   spdlog::info("Today is {:%A %Y-%m-%d}", time);
+  */
 }
 
 void clear_log_history()
